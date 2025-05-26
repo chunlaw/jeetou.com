@@ -46,7 +46,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const fetchImages = useMemo(
     () =>
       debounce((q: string) => {
-        fetch(`https://jeetou.com/api/search/?q=${encodeURIComponent(q)}`)
+        fetch(`https://api.jeetou.com/api/search/?q=${encodeURIComponent(q)}`)
           .then((r) => r.json())
           .then((results: ResultResponse) => {
             setState((prev) => ({
